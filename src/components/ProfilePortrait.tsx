@@ -20,7 +20,9 @@ export const ProfilePortrait: React.FC<ProfilePortraitProps> = ({
   const [imgError, setImgError] = useState(false);
   const [isZoomed, setIsZoomed] = useState(false);
 
-  const customImgUrl = profile.profile_image_url;
+  // Always show the supplied portfolio portrait when the CMS has no custom
+  // image (for example, when a database row contains an empty value).
+  const customImgUrl = profile.profile_image_url?.trim() || '/profile-kavisri.png';
 
   // Render when custom user photo exists
   if (customImgUrl && !imgError) {
