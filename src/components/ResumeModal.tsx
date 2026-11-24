@@ -42,9 +42,9 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
   const safeProfile = profile || {};
   const githubLink = safeSocialLinks.find(s => s.platform.toLowerCase().includes('github'))?.url || safeProfile.github_url || 'https://github.com/kavisri005';
   const linkedinLink = safeSocialLinks.find(s => s.platform.toLowerCase().includes('linkedin'))?.url || safeProfile.linkedin_url || 'https://linkedin.com/in/kavisri-a';
-  const emailVal = safeProfile.email || 'a.kavisri005@gmail.com';
+  const emailVal = safeProfile.email || 'a.kavisrii@gmail.com';
   const phoneVal = safeProfile.phone || '+91 93617 83617';
-  const locationVal = safeProfile.location || 'Trichy, Tamil Nadu, India';
+  const locationVal = safeProfile.location || 'Salem, India';
 
   const publishedEducation = (education || []).filter(e => e.is_published !== false);
   const publishedExperiences = (experiences || []).filter(e => e.is_published !== false);
@@ -67,8 +67,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
   const handleDownloadText = () => {
     const textContent = `=====================================================
-${profile.name || 'KAVISRI A'} — ${profile.title || 'Aspiring Software Developer'}
-${profile.positioning || 'Software Development • Data • AI/ML'}
+${profile.name || 'KAVISRI A'} — ${profile.title || 'Software Developer'}
+${profile.positioning || 'Full-Stack Web Development | APIs | Database Systems'}
 =====================================================
 Email: ${emailVal}
 Phone: ${phoneVal}
@@ -193,7 +193,7 @@ ${publishedAchievements.map(a => `* ${a.title}: ${a.description}`).join('\n')}
                 {profile.name || 'Kavisri A'}
               </h1>
               <p className="text-cyan-300 font-medium text-sm mb-3">
-                {profile.title || 'Aspiring Software Developer'} • {profile.positioning || 'Software Development • Data • AI/ML'}
+                {profile.title || 'Software Developer'} • {profile.positioning || 'Full-Stack Web Development | APIs | Database Systems'}
               </p>
               <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-400">
                 <span className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5 text-cyan-400" /> {emailVal}</span>

@@ -46,7 +46,7 @@ export const AdminEducation: React.FC = () => {
     setDegree('B.E. Computer Science and Engineering');
     setInstitution('M.A.M. College of Engineering and Technology');
     setLocation('Trichy, Tamil Nadu');
-    setPeriod('2023 - 2027');
+    setPeriod('2023 - Present');
     setScore('8.33');
     setScoreLabel('CGPA');
     setStatus('Pursuing');

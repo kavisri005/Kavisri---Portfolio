@@ -50,7 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume, onOpenAI }) => {
 
   const githubLink = socialLinks.find(s => s.platform.toLowerCase().includes('github'))?.url || 'https://github.com/kavisri005';
   const linkedinLink = socialLinks.find(s => s.platform.toLowerCase().includes('linkedin'))?.url || 'https://linkedin.com/in/kavisri-a';
-  const emailVal = profile.email || 'a.kavisri005@gmail.com';
+  const emailVal = profile.email || 'a.kavisrii@gmail.com';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -123,7 +123,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume, onOpenAI }) => {
               {profile.name || 'KAVISRI A'}
             </span>
             <span className="text-[10px] text-slate-400 -mt-1 tracking-wider uppercase font-mono flex items-center gap-1">
-              <span>{profile.title || 'Aspiring Software Developer'}</span>
+              <span>{profile.title || 'Software Developer'}</span>
             </span>
           </div>
         </a>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -42,13 +42,26 @@ import { useTheme } from './context/ThemeContext';
 export default function App() {
   const [resumeOpen, setResumeOpen] = useState(false);
   const [aiAgentOpen, setAiAgentOpen] = useState(false);
-  const { user } = useCMS();
+  const { user, isCheckingAuth, logout } = useCMS();
   const { currentPath, activeAdminTab } = useRouter();
   const { isDark } = useTheme();
 
   const isAdminRoute = currentPath.startsWith('/admin');
 
+  // Leaving the admin area ends the in-memory session. Returning to any admin
+  // route then presents the password form again.
+  useEffect(() => {
+    if (!isAdminRoute && user) void logout();
+  }, [isAdminRoute, user, logout]);
+
   if (isAdminRoute) {
+    if (isCheckingAuth) {
+      return (
+        <div className="min-h-screen bg-[#07090e] text-slate-300 flex items-center justify-center" role="status">
+          <span className="text-sm font-mono">Verifying admin session…</span>
+        </div>
+      );
+    }
     if (!user) {
       return <AdminLogin />;
     }

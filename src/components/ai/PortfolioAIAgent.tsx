@@ -60,7 +60,7 @@ export const PortfolioAIAgent: React.FC<PortfolioAIAgentProps> = ({
       setTimeout(() => inputRef.current?.focus(), 150);
       if (messages.length === 0) {
         const welcomeText = formatAIResponse(
-          "Hello! I am Detective Doggy, Kavisri A's AI assistant. Kavisri is a Computer Science Engineering student (Batch 2023–2027, 8.33 CGPA) at M.A.M. College of Engineering and Technology, Trichy.\n\nAsk me about her projects, skills, education, internships, or contact details in English, Tanglish, Tamil, Hindi, or any language!"
+          "Hello! I am Detective Doggy, Kavisri A's portfolio assistant. Kavisri is a Computer Science and Engineering undergraduate at M.A.M. College of Engineering and Technology with an 8.33/10 CGPA and hands-on experience in React.js, Python, Flask, SQL, REST APIs, and database systems.\n\nAsk me about her projects, skills, education, internships, or contact details."
         );
 
         setMessages([
@@ -214,7 +214,7 @@ export const PortfolioAIAgent: React.FC<PortfolioAIAgentProps> = ({
   const clearChat = () => {
     setDoggyMood('sniffing');
     const resetText = formatAIResponse(
-      "Chat history cleared. You can ask Detective Doggy any question about Kavisri's technical skills, engineering projects, 8.33 CGPA, or contact information."
+      "Chat history cleared. Ask Detective Doggy about Kavisri's listed web projects, technical skills, internships, education, or contact details."
     );
     setMessages([
       {

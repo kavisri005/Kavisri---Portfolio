@@ -120,7 +120,7 @@ export const AdminCertifications: React.FC = () => {
             Certifications & Courses ({certifications.length})
           </h1>
           <p className="text-slate-400 text-xs sm:text-sm mt-1">
-            Manage Python, Java, Web, SQL, Power BI, and AI credentials displayed across the portfolio.
+            Manage the programming, web, database, AI, and professional skills certificates shown on the portfolio.
           </p>
         </div>
 

@@ -37,7 +37,21 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
       case 'ecommerce-returns':
         return <EcommerceReturnsMockup />;
       default:
-        return null;
+        return (
+          <div className="min-h-56 rounded-xl bg-gradient-to-br from-slate-900 via-slate-950 to-cyan-950/40 p-6 flex flex-col justify-between">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-cyan-300/80">Project Preview</span>
+            <div>
+              <div className="h-1 w-12 rounded-full bg-cyan-400 mb-3" />
+              <h4 className="text-xl font-bold text-white">{project.title}</h4>
+              <p className="text-sm text-slate-300 mt-2">{project.subtitle || project.category}</p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {(project.technologies || []).slice(0, 5).map((technology) => (
+                <span key={technology} className="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-[10px] font-mono text-slate-300">{technology}</span>
+              ))}
+            </div>
+          </div>
+        );
     }
   };
 

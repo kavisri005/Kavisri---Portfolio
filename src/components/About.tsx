@@ -11,9 +11,9 @@ export const About: React.FC = () => {
   const detailedBio = profile.detailed_bio && profile.detailed_bio.length > 0
     ? profile.detailed_bio
     : [
-        "I am a Computer Science and Engineering student driven by building software solutions that solve real problems. My journey began with core programming logic in Python and Java, expanding into full-stack web architectures, relational database management, and modern data analytics.",
-        "Through practical internships and hands-on projects, I have developed functional applications like CampusFind and Smart IoT Agriculture management, and performed analytics on industrial datasets like smart-home energy consumption and e-commerce return behaviors.",
-        "I thrive on writing clean, maintainable code, understanding system architectures, and continuously mastering emerging AI technologies, prompt workflows, and automated pipelines to build impactful digital tools."
+        "I am a Computer Science and Engineering undergraduate at M.A.M. College of Engineering and Technology with hands-on experience in full-stack web development using React.js, JavaScript, Python, Flask, and SQL.",
+        "My internships and projects include responsive web applications, REST APIs, database-driven systems, e-commerce, enquiry management, and interactive photography experiences.",
+        "I bring problem-solving, critical thinking, teamwork, adaptability, and a quick-learning mindset, and I am seeking a Software Developer role."
       ];
 
   const eduBrief = profile.education_brief || {
@@ -102,7 +102,7 @@ export const About: React.FC = () => {
                   <span>Academic &amp; Profile Summary</span>
                 </span>
                 <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full glass-pill text-cyan-300 border border-cyan-500/30">
-                  Class of 2027
+                  Undergraduate
                 </span>
               </div>
 
@@ -138,7 +138,7 @@ export const About: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-[10px] font-mono uppercase tracking-wider text-slate-400">Base Location</div>
-                    <div className="text-xs sm:text-sm font-semibold text-white">Trichy, Tamil Nadu, India</div>
+                    <div className="text-xs sm:text-sm font-semibold text-white">{profile.location || 'Salem, India'}</div>
                     <div className="text-[10px] text-slate-400">Open for on-site, hybrid, and remote roles</div>
                   </div>
                 </div>
@@ -150,7 +150,7 @@ export const About: React.FC = () => {
                   </div>
                   <div>
                     <div className="text-[10px] font-mono uppercase tracking-wider text-slate-400">Engineering Focus</div>
-                    <div className="text-xs sm:text-sm font-semibold text-white">Software Development • Data Analytics • GenAI</div>
+                    <div className="text-xs sm:text-sm font-semibold text-white">Full-Stack Web Development • APIs • Database Systems</div>
                   </div>
                 </div>
               </div>
@@ -163,13 +163,13 @@ export const About: React.FC = () => {
                     Full-Stack Web
                   </span>
                   <span className="px-2 py-0.5 rounded-md bg-sky-500/10 border border-sky-500/20 text-sky-300 text-[10px] font-mono">
-                    Python &amp; Java
+                    React.js &amp; Python
                   </span>
                   <span className="px-2 py-0.5 rounded-md bg-purple-500/10 border border-purple-500/20 text-purple-300 text-[10px] font-mono">
-                    SQL &amp; Analytics
+                    SQL &amp; PostgreSQL
                   </span>
                   <span className="px-2 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-[10px] font-mono">
-                    IoT &amp; AI
+                    REST APIs &amp; Supabase
                   </span>
                 </div>
               </div>

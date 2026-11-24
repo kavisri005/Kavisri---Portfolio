@@ -26,46 +26,48 @@ export const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.status': 'Available for Software Internships & Full-Time Roles',
     'hero.greeting': "Hi, I'm",
-    'hero.role': 'Aspiring Software Developer & CSE Student',
-    'hero.tagline': 'Building performant software, intelligent data systems, and human-centric digital experiences.',
+    'hero.headline': 'I build responsive web applications and database systems with React, Python, and SQL.',
+    'hero.positioning': 'Full-Stack Web Development • APIs • Database Systems',
+    'hero.role': 'Software Developer & CSE Student',
+    'hero.tagline': 'Building responsive web applications, REST APIs, database systems, and AI-powered tools.',
     'hero.viewProjects': 'View My Projects',
     'hero.downloadResume': 'Download Resume',
     'hero.contactMe': 'Contact Me',
     'hero.chatWithAI': 'Chat with AI Agent',
     'hero.quickStats': 'Quick Overview',
     'hero.cgpa': '8.33 CGPA',
-    'hero.gradYear': 'Class of 2027',
-    'hero.location': 'Trichy, Tamil Nadu',
+    'hero.gradYear': 'Undergraduate',
+    'hero.location': 'Salem, India',
 
     // About
     'about.title': 'About Me',
-    'about.subtitle': 'Undergraduate Computer Science & Engineering student with a passion for software craft and data systems.',
-    'about.story': 'I am an engineering student at M.A.M. College of Engineering and Technology with an 8.33 CGPA. I specialize in core software development, Python/Java programming, relational databases, data analytics, and generative AI systems.',
+    'about.subtitle': 'Computer Science and Engineering undergraduate with hands-on full-stack development experience.',
+    'about.story': 'I build responsive web applications using React.js, JavaScript, Python, Flask, and SQL, with experience in REST APIs and database-driven systems.',
     'about.cardTitle': 'Developer Identity',
     'about.activeStudent': 'Active Student',
 
     // Skills
     'skills.title': 'Technical Arsenal',
-    'skills.subtitle': 'Core programming languages, frameworks, databases, and analytical tools.',
+    'skills.subtitle': 'Programming languages, web development frameworks, databases, APIs, and tools from the resume.',
 
     // Projects
     'projects.title': 'Featured Engineering Works',
-    'projects.subtitle': 'Selected software systems, IoT solutions, and applications.',
+    'projects.subtitle': 'Selected web applications, e-commerce platforms, and business systems.',
     'projects.viewLive': 'Live Demo',
     'projects.viewGithub': 'View Source Code',
     'projects.details': 'Explore Architecture',
 
     // Experience
     'experience.title': 'Professional Journey',
-    'experience.subtitle': 'Internships, technical development roles, and project leadership.',
+    'experience.subtitle': 'Internships in web development, databases, AI/ML, and software development.',
 
     // Education
     'education.title': 'Academic Foundation',
-    'education.subtitle': 'Computer Science & Engineering education and scholastic milestones.',
+    'education.subtitle': 'B.E. Computer Science and Engineering at M.A.M. College of Engineering and Technology (2023 - Present), CGPA 8.33/10.',
 
     // Certifications
     'certifications.title': 'Certifications & Credentials',
-    'certifications.subtitle': 'Verified skill assessments and industry credentials.',
+    'certifications.subtitle': 'Certificates in programming, web technologies, databases, prompt engineering, AI fundamentals, and professional skills.',
 
     // Contact
     'contact.title': "Let's Build Something",
@@ -104,7 +106,9 @@ export const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.status': 'Software Roles & Internships-ku Ready!',
     'hero.greeting': 'Vanakkam, Naan',
-    'hero.role': 'Aspiring Software Developer & CSE Student',
+    'hero.headline': 'React, Python, SQL use panni responsive web applications build panren.',
+    'hero.positioning': 'Full-Stack Web Development • APIs • Database Systems',
+    'hero.role': 'Software Developer & CSE Student',
     'hero.tagline': 'Fast-ana Software, Data systems, and Modern AI tech build panradhu enoda passion.',
     'hero.viewProjects': 'Projects Paaru',
     'hero.downloadResume': 'Resume Download Pannu',
@@ -112,38 +116,38 @@ export const translations: Record<Language, Record<string, string>> = {
     'hero.chatWithAI': 'AI Agent kitta Pesu',
     'hero.quickStats': 'Oru Quick Look',
     'hero.cgpa': '8.33 CGPA',
-    'hero.gradYear': '2027 Batch',
-    'hero.location': 'Trichy, TN',
+    'hero.gradYear': 'Undergraduate',
+    'hero.location': 'Salem, India',
 
     // About
     'about.title': 'Enna Pathi (About Me)',
-    'about.subtitle': 'M.A.M. College-la B.E. Computer Science padikira student, software and data-la sema interest.',
-    'about.story': 'Naan M.A.M. College of Engineering and Technology-la CSE padikiren (CGPA 8.33). Python, Java, React, SQL, Data Analytics, and Generative AI-la practical projects neraya panniruken.',
+    'about.subtitle': 'M.A.M. College-la Computer Science and Engineering padikkiren; full-stack web development-la hands-on experience irukku.',
+    'about.story': 'Naan React.js, JavaScript, Python, Flask, SQL use panni responsive web apps build panniruken. REST APIs and database-driven systems-la hands-on experience irukku.',
     'about.cardTitle': 'Developer Identity',
     'about.activeStudent': 'Active CSE Student',
 
     // Skills
     'skills.title': 'Technical Arsenal (En Skills)',
-    'skills.subtitle': 'Programming languages, Web frameworks, Databases, and Modern AI Tools.',
+    'skills.subtitle': 'Programming languages, web frameworks, databases, REST APIs, and development tools.',
 
     // Projects
     'projects.title': 'Top Engineering Projects',
-    'projects.subtitle': 'IoT Smart Agriculture, Job Tracker, AI Studio mathiri naan pannina main projects.',
+    'projects.subtitle': 'Web applications, e-commerce platforms, business websites, and photography studio experience projects.',
     'projects.viewLive': 'Live Demo Paaru',
     'projects.viewGithub': 'GitHub Code Paaru',
     'projects.details': 'Full Details',
 
     // Experience
     'experience.title': 'Experience & Journey',
-    'experience.subtitle': 'CodeAlpha software internship and web development works.',
+    'experience.subtitle': 'Web development, database, AI/ML, and software developer internships.',
 
     // Education
     'education.title': 'Education Details',
-    'education.subtitle': 'M.A.M. College of Engineering and Technology B.E. CSE (2023-2027).',
+    'education.subtitle': 'M.A.M. College of Engineering and Technology B.E. CSE (2023 - Present), CGPA 8.33/10.',
 
     // Certifications
     'certifications.title': 'Certifications & Courses',
-    'certifications.subtitle': 'Python, Java, Cloud, and AI verified certificates.',
+    'certifications.subtitle': 'Certificates in programming, web, database management, prompt engineering, AI fundamentals, and professional skills.',
 
     // Contact
     'contact.title': 'Pesalam Vanga! (Get In Touch)',
@@ -182,21 +186,23 @@ export const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.status': 'மென்பொருள் பணிகளுக்கு தயார் நிலையில்',
     'hero.greeting': 'வணக்கம், நான்',
+    'hero.positioning': "Full-Stack Web Development ? APIs ? Database Systems",
+    'hero.headline': "I build responsive web applications and database systems with React, Python, and SQL.",
     'hero.role': 'கணினி அறிவியல் பொறியியல் மாணவி & மென்பொருள் உருவாக்குநர்',
-    'hero.tagline': 'திறமையான மென்பொருட்கள், தரவு அமைப்புகள் மற்றும் நவீன AI தொழில்நுட்பங்களை உருவாக்குவதில் ஆர்வமுள்ளவர்.',
+    'hero.tagline': "Building responsive web apps, REST APIs, database systems, and AI-powered tools.",
     'hero.viewProjects': 'திட்டங்களைப் பார்க்க',
     'hero.downloadResume': 'விவரக்குறிப்பு பதிவிறக்கம்',
     'hero.contactMe': 'தொடர்பு கொள்ள',
     'hero.chatWithAI': 'AI உதவியாளருடன் உரையாட',
     'hero.quickStats': 'சுருக்கமான பார்வை',
     'hero.cgpa': '8.33 CGPA',
-    'hero.gradYear': '2027 தொகுதி',
-    'hero.location': 'திருச்சி, தமிழ்நாடு',
+    'hero.gradYear': 'Undergraduate',
+    'hero.location': "Salem, India",
 
     // About
     'about.title': 'என்னைப் பற்றி',
-    'about.subtitle': 'M.A.M. பொறியியல் மற்றும் தொழில்நுட்பக் கல்லூரியில் கணினி அறிவியல் பயிலும் மாணவி.',
-    'about.story': 'நான் M.A.M. பொறியியல் மற்றும் தொழில்நுட்பக் கல்லூரியில் கணினி அறிவியல் (B.E. CSE) பயில்கிறேன் (மதிப்பெண்: 8.33 CGPA, 2023-2027). பைதான், ஜாவா, இணையதள உருவாக்கம், தரவு பகுப்பாய்வு மற்றும் AI தொழில்நுட்பங்களில் தீவிர ஆர்வம் கொண்டுள்ளேன்.',
+    'about.subtitle': "Computer Science and Engineering undergraduate with hands-on full-stack development experience.",
+    'about.story': "I build responsive web apps with React.js, JavaScript, Python, Flask, and SQL, with REST API and database systems experience.",
     'about.cardTitle': 'டெவலப்பர் அடையாளம்',
     'about.activeStudent': 'மாணவி',
 
@@ -206,22 +212,22 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Projects
     'projects.title': 'முக்கிய திட்டங்கள்',
-    'projects.subtitle': 'ஸ்மார்ட் விவசாயம், வேலைவாய்ப்பு கண்காணிப்பு மற்றும் பிற மென்பொருள் படைப்புகள்.',
+    'projects.subtitle': "PulseTask, Parambariyam Cashews, MD Engineers, and Sri Parasakthi Digitals.",
     'projects.viewLive': 'நேரடி மாதிரி',
     'projects.viewGithub': 'மூலக் குறியீடு',
     'projects.details': 'முழு விவரங்கள்',
 
     // Experience
     'experience.title': 'பணி அனுபவம்',
-    'experience.subtitle': 'கோட்ஆல்ஃபா மென்பொருள் பயிற்சி மற்றும் இணைய வளர்ச்சி பணிகள்.',
+    'experience.subtitle': "Internships in web development, database management, AI/ML, and software development.",
 
     // Education
     'education.title': 'கல்வி தகுதி',
-    'education.subtitle': 'M.A.M. பொறியியல் மற்றும் தொழில்நுட்பக் கல்லூரி (2023-2027).',
+    'education.subtitle': "M.A.M. College of Engineering and Technology, B.E. CSE, 2023 - Present, CGPA 8.33/10.",
 
     // Certifications
     'certifications.title': 'சான்றிதழ்கள்',
-    'certifications.subtitle': 'சரிபார்க்கப்பட்ட சான்றிதழ்கள் மற்றும் பயிற்சிகள்.',
+    'certifications.subtitle': "Certificates in programming, web technologies, databases, prompt engineering, AI fundamentals, and professional skills.",
 
     // Contact
     'contact.title': 'தொடர்பு கொள்க',

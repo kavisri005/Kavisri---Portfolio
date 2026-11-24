@@ -29,22 +29,20 @@ import { supabase, isSupabaseConfigured } from '../lib/supabase';
 import { User, Session } from '@supabase/supabase-js';
 
 const STORAGE_KEYS = {
-  PROFILE: 'kavisri_cms_profile_v2',
-  SKILLS: 'kavisri_cms_skills_v2',
-  PROJECTS: 'kavisri_cms_projects_v2',
-  EXPERIENCE: 'kavisri_cms_experience_v2',
-  EDUCATION: 'kavisri_cms_education_v2',
-  CERTIFICATIONS: 'kavisri_cms_certifications_v2',
-  ACHIEVEMENTS: 'kavisri_cms_achievements_v2',
-  EXPLORING: 'kavisri_cms_exploring_v2',
-  SOCIAL: 'kavisri_cms_social_v2',
-  RESUME: 'kavisri_cms_resume_v2',
-  LAST_UPDATED: 'kavisri_cms_last_updated_v2',
-  ADMIN_TOKEN: 'kavisri_cms_admin_token',
+  PROFILE: 'kavisri_cms_profile_v3',
+  SKILLS: 'kavisri_cms_skills_v3',
+  PROJECTS: 'kavisri_cms_projects_v3',
+  EXPERIENCE: 'kavisri_cms_experience_v3',
+  EDUCATION: 'kavisri_cms_education_v3',
+  CERTIFICATIONS: 'kavisri_cms_certifications_v3',
+  ACHIEVEMENTS: 'kavisri_cms_achievements_v3',
+  EXPLORING: 'kavisri_cms_exploring_v3',
+  SOCIAL: 'kavisri_cms_social_v3',
+  RESUME: 'kavisri_cms_resume_v3',
+  LAST_UPDATED: 'kavisri_cms_last_updated_v3',
 };
 
 export const AUTHORIZED_ADMIN_EMAIL = 'a.kavisri005@gmail.com';
-export const DEFAULT_ADMIN_PASSWORD = 'kavisri123';
 
 interface CMSContextType {
   // Data States
@@ -137,11 +135,9 @@ interface CMSContextType {
   isAuthenticated: boolean;
   isCheckingAuth: boolean;
   adminEmail: string;
-  adminPassword: string;
   login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
   logout: () => Promise<void>;
   updateAdminPassword: (newPass: string) => Promise<{ success: boolean; error?: string }>;
-  resetAdminPassword: (email: string, newPass: string) => Promise<{ success: boolean; message: string; error?: string }>;
 
   // Toasts
   toasts: ToastMessage[];
@@ -196,8 +192,9 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   // Auth State
   const [user, setUser] = useState<User | { email: string; id: string } | null>(null);
   const [session, setSession] = useState<Session | null>(null);
-  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
-  const [authToken, setAuthToken] = useState<string | null>(() => localStorage.getItem(STORAGE_KEYS.ADMIN_TOKEN));
+  const [isCheckingAuth] = useState(false);
+  // Keep the admin token in memory only. A reload or a fresh visit must sign in again.
+  const [authToken, setAuthToken] = useState<string | null>(null);
 
   const addToast = useCallback((message: string, type: 'success' | 'error' | 'info' | 'warning' = 'success', title?: string) => {
     const id = `${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
@@ -221,7 +218,7 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   // Save full state bundle to Server Single Source of Truth
   const syncBundleToServer = useCallback(async (overrides: Partial<any> = {}) => {
     try {
-      const token = localStorage.getItem(STORAGE_KEYS.ADMIN_TOKEN);
+      const token = authToken;
       const headers: Record<string, string> = { 'Content-Type': 'application/json' };
       if (token) {
         headers['Authorization'] = `Bearer ${token}`;
@@ -256,7 +253,7 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       console.warn('Sync to server notice:', err);
     }
     return false;
-  }, [profile, skills, projects, experiences, education, certifications, achievements, exploring, socialLinks, resumeData, touchLastUpdated]);
+  }, [profile, skills, projects, experiences, education, certifications, achievements, exploring, socialLinks, resumeData, touchLastUpdated, authToken]);
 
   // Load latest Single Source of Truth from Server on Mount
   useEffect(() => {
@@ -326,43 +323,6 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     };
   }, []);
 
-  // Check Auth on Mount
-  useEffect(() => {
-    let isMounted = true;
-
-    async function initAuth() {
-      setIsCheckingAuth(true);
-      const token = localStorage.getItem(STORAGE_KEYS.ADMIN_TOKEN);
-
-      if (token) {
-        try {
-          const res = await fetch('/api/auth/verify', {
-            headers: { Authorization: `Bearer ${token}` }
-          });
-          if (res.ok) {
-            const data = await res.json();
-            if (data.authenticated && isMounted) {
-              setUser({ email: data.user.email, id: 'admin-kavisri' });
-              setAuthToken(token);
-            } else if (isMounted) {
-              localStorage.removeItem(STORAGE_KEYS.ADMIN_TOKEN);
-              setUser(null);
-            }
-          }
-        } catch {
-          // Token verify network failure
-        }
-      }
-
-      if (isMounted) setIsCheckingAuth(false);
-    }
-
-    initAuth();
-    return () => {
-      isMounted = false;
-    };
-  }, []);
-
   // Derived categorized skills
   const skillCategories: SkillCategory[] = useMemo(() => {
     const DEFAULT_CATEGORIES = [
@@ -423,7 +383,6 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
       const data = await res.json();
       if (res.ok && data.success) {
-        localStorage.setItem(STORAGE_KEYS.ADMIN_TOKEN, data.token);
         setAuthToken(data.token);
         setUser({ email: data.user.email, id: 'admin-kavisri' });
         addToast('Signed in to Admin Dashboard successfully.', 'success');
@@ -445,13 +404,15 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     try {
       const res = await fetch('/api/auth/reset-password', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...(authToken ? { Authorization: `Bearer ${authToken}` } : {}) },
         body: JSON.stringify({ email: AUTHORIZED_ADMIN_EMAIL, newPassword: cleanPass })
       });
 
       const data = await res.json();
       if (res.ok && data.success) {
         addToast('Admin password updated successfully.', 'success');
+        setAuthToken(null);
+        setUser(null);
         return { success: true };
       } else {
         return { success: false, error: data.error || 'Failed to update password.' };
@@ -461,48 +422,7 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     }
   };
 
-  const resetAdminPassword = async (email: string, newPass: string): Promise<{ success: boolean; message: string; error?: string }> => {
-    const normalizedEmail = email.trim().toLowerCase();
-    if (normalizedEmail !== AUTHORIZED_ADMIN_EMAIL.toLowerCase()) {
-      return { 
-        success: false, 
-        message: '',
-        error: `Access Denied: Only ${AUTHORIZED_ADMIN_EMAIL} can reset the administrator password.` 
-      };
-    }
-    if (!newPass || newPass.trim().length < 6) {
-      return { 
-        success: false, 
-        message: '',
-        error: 'New password must be at least 6 characters long.' 
-      };
-    }
-    const cleanPass = newPass.trim();
-
-    try {
-      const res = await fetch('/api/auth/reset-password', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: normalizedEmail, newPassword: cleanPass })
-      });
-
-      const data = await res.json();
-      if (res.ok && data.success) {
-        addToast('Admin password has been reset successfully.', 'success');
-        return { 
-          success: true, 
-          message: data.message || `Password reset successfully! Your new password is now active.` 
-        };
-      } else {
-        return { success: false, message: '', error: data.error || 'Failed to reset password.' };
-      }
-    } catch {
-      return { success: false, message: '', error: 'Network error during password reset.' };
-    }
-  };
-
   const logout = async (): Promise<void> => {
-    localStorage.removeItem(STORAGE_KEYS.ADMIN_TOKEN);
     setAuthToken(null);
     setUser(null);
     setSession(null);
@@ -512,7 +432,7 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   // Cross-Device Persistent Image and Document Uploads
   const uploadImage = async (file: File): Promise<{ success: boolean; url: string }> => {
     try {
-      const token = localStorage.getItem(STORAGE_KEYS.ADMIN_TOKEN);
+      const token = authToken;
       const reader = new FileReader();
 
       const base64Promise = new Promise<string>((resolve, reject) => {
@@ -556,7 +476,7 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const uploadResumeFile = async (file: File): Promise<{ success: boolean; url: string; filename: string }> => {
     try {
-      const token = localStorage.getItem(STORAGE_KEYS.ADMIN_TOKEN);
+      const token = authToken;
       const reader = new FileReader();
 
       const base64Promise = new Promise<string>((resolve, reject) => {
@@ -1387,11 +1307,9 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         isAuthenticated: Boolean(user),
         isCheckingAuth,
         adminEmail: AUTHORIZED_ADMIN_EMAIL,
-        adminPassword: DEFAULT_ADMIN_PASSWORD,
         login,
         logout,
         updateAdminPassword,
-        resetAdminPassword,
 
         toasts,
         addToast,

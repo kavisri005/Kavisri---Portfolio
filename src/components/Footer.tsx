@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
 
   const githubLink = socialLinks.find(s => s.platform.toLowerCase().includes('github'))?.url || profile.github_url || 'https://github.com/kavisri005';
   const linkedinLink = socialLinks.find(s => s.platform.toLowerCase().includes('linkedin'))?.url || profile.linkedin_url || 'https://linkedin.com/in/kavisri-a';
-  const emailVal = profile.email || 'a.kavisri005@gmail.com';
+  const emailVal = profile.email || 'a.kavisrii@gmail.com';
 
   return (
     <footer className="py-12 border-t border-white/10 glass-panel text-slate-400 text-xs mt-12">
@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
               {profile.name || 'Kavisri A'}
             </span>
             <span className="text-slate-400 text-xs font-mono">
-              {profile.title || 'Aspiring Software Developer'} • {profile.positioning || 'Software Development • Data • AI/ML'}
+              {profile.title || 'Software Developer'} • {profile.positioning || 'Full-Stack Web Development | APIs | Database Systems'}
             </span>
           </div>
 

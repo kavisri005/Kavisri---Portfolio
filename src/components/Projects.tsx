@@ -33,7 +33,23 @@ export const Projects: React.FC = () => {
       case 'ecommerce-returns':
         return <EcommerceReturnsMockup />;
       default:
-        return <CampusFindMockup />;
+        return (
+          <div className="min-h-64 rounded-xl border border-white/10 bg-gradient-to-br from-slate-900 via-slate-950 to-cyan-950/40 p-6 flex flex-col justify-between">
+            <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-cyan-300/80">
+              <span>Project Preview</span>
+              <span>Live Work</span>
+            </div>
+            <div className="space-y-3">
+              <div className="h-1 w-14 rounded-full bg-cyan-400" />
+              <h4 className="text-2xl font-bold text-white">{pTitle}</h4>
+              <p className="text-sm text-slate-300">Responsive interface • Connected services • Thoughtful details</p>
+            </div>
+            <div className="flex gap-2">
+              <span className="rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-[10px] font-mono text-slate-300">Explore project</span>
+              <span className="rounded-md border border-cyan-400/20 bg-cyan-400/10 px-3 py-1.5 text-[10px] font-mono text-cyan-200">Built with care</span>
+            </div>
+          </div>
+        );
     }
   };
 
@@ -133,6 +149,17 @@ export const Projects: React.FC = () => {
 
                       {/* Action Button */}
                       <div className="pt-3">
+                        {project.demo_url && (
+                          <a
+                            href={project.demo_url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-2 px-5 py-3 mr-2 mb-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold text-xs transition"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                            <span>Live Demo</span>
+                          </a>
+                        )}
                         <button
                           onClick={() => setSelectedProject(project)}
                           className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 hover:border-cyan-400/60 font-semibold text-xs transition-all transform group-hover:translate-x-1 shadow-sm cursor-pointer"

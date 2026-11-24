@@ -91,7 +91,7 @@ export const AdminResume: React.FC = () => {
                     </span>
                     <span className="flex items-center gap-1">
                       <HardDrive className="w-3 h-3 text-slate-500" />
-                      <span>{resumeData.size || '142 KB'}</span>
+                      <span>{resumeData.size || '133 KB'}</span>
                     </span>
                   </div>
                 </div>
@@ -156,7 +156,7 @@ export const AdminResume: React.FC = () => {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 mt-0.5 shrink-0" />
-                <span>Ensure CGPA (8.04), technical projects, and Python/Java skills align with your portfolio.</span>
+                <span>Keep the 8.33/10 CGPA, project details, and technical skills aligned with the attached resume.</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 mt-0.5 shrink-0" />

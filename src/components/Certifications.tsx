@@ -51,7 +51,7 @@ export const Certifications: React.FC = () => {
             Certifications ({publishedCertifications.length})
           </h2>
           <p className="text-slate-300 mt-2 max-w-2xl text-sm sm:text-base">
-            Technical course certificates and structured learning completed in programming, web technologies, databases, analytics, and AI fundamentals.
+            Certificates in programming, web technologies, databases, prompt engineering, AI fundamentals, and professional skills.
           </p>
           <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-sky-500 rounded-full mt-3"></div>
         </div>

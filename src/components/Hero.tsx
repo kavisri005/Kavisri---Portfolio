@@ -32,7 +32,7 @@ interface HeroProps {
 
 const DOMAIN_FLOW = [
   { label: 'CODE', icon: Code2, color: 'text-cyan-400', bg: 'bg-cyan-500/10', border: 'border-cyan-500/30' },
-  { label: 'DATA', icon: Database, color: 'text-sky-400', bg: 'bg-sky-500/10', border: 'border-sky-500/30' },
+  { label: 'WEB', icon: Database, color: 'text-sky-400', bg: 'bg-sky-500/10', border: 'border-sky-500/30' },
   { label: 'AI', icon: Sparkles, color: 'text-purple-400', bg: 'bg-purple-500/10', border: 'border-purple-500/30' },
   { label: 'BUILD', icon: Boxes, color: 'text-emerald-400', bg: 'bg-emerald-500/10', border: 'border-emerald-500/30' },
 ];
@@ -53,7 +53,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenAI }) => {
 
   const githubLink = socialLinks.find(s => s.platform.toLowerCase().includes('github'))?.url || profile.github_url || 'https://github.com/kavisri005';
   const linkedinLink = socialLinks.find(s => s.platform.toLowerCase().includes('linkedin'))?.url || profile.linkedin_url || 'https://linkedin.com/in/kavisri-a';
-  const emailVal = profile.email || 'a.kavisri005@gmail.com';
+  const emailVal = profile.email || 'a.kavisrii@gmail.com';
 
   const internshipCount = experiences.length > 0 ? experiences.length : 4;
   const projectCount = projects.length > 0 ? projects.length : 4;
@@ -108,9 +108,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenAI }) => {
             <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.2]">
               {language === 'en' ? (
                 <>
-                  I build practical software solutions with{' '}
+                  I build responsive web applications and database driven systems with{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-400 to-teal-400">
-                    code, data &amp; AI.
+                    React, Python and SQL.
                   </span>
                 </>
               ) : (
@@ -121,7 +121,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenAI }) => {
             {/* Sub-headline positioning */}
             <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-300 flex-wrap">
               <span className="px-2.5 py-0.5 rounded-md glass-pill font-mono text-cyan-400 text-[11px] border border-cyan-500/30">
-                {profile.title || 'Aspiring Software Developer'}
+                {profile.title || 'Software Developer'}
               </span>
               <span className="text-slate-500">•</span>
               <span className="text-slate-300">{t('hero.positioning')}</span>
@@ -225,7 +225,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenAI }) => {
 
                   <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-slate-950/75 backdrop-blur-md border border-white/15 text-slate-300 text-[11px] font-mono shadow-lg">
                     <MapPin className="w-3 h-3 text-cyan-400" />
-                    <span>Trichy, IN</span>
+                    <span>{profile.location || 'Salem, India'}</span>
                   </div>
                 </div>
               </div>
@@ -240,13 +240,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenAI }) => {
                     <CheckCircle2 className="w-4 h-4 text-cyan-400" title="Verified Portfolio" />
                   </div>
                   <p className="text-xs text-cyan-300 font-mono">
-                    B.E. Computer Science &amp; Engineering • 2023–2027
+                  B.E. Computer Science &amp; Engineering • 2023 - Present
                   </p>
                 </div>
 
                 <div className="text-right">
                   <span className="text-[10px] font-mono uppercase text-slate-400 block" title="M.A.M. College of Engineering and Technology">MAMCET</span>
-                  <span className="text-xs font-bold text-amber-300 font-mono">8.33 CGPA</span>
+                  <span className="text-xs font-bold text-amber-300 font-mono">{cgpaVal} CGPA</span>
                 </div>
               </div>
 
@@ -256,7 +256,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onOpenAI }) => {
                   whileHover={{ y: -2 }}
                   className="p-2.5 rounded-xl glass-subcard text-center border border-white/10 hover:border-cyan-500/40 transition"
                 >
-                  <div className="text-xs font-mono text-cyan-400 font-bold">8.33</div>
+                  <div className="text-xs font-mono text-cyan-400 font-bold">{cgpaVal}</div>
                   <div className="text-[10px] text-slate-400 leading-tight mt-0.5">CGPA</div>
                 </motion.div>
 

@@ -14,7 +14,7 @@ export const AIAgentLauncher: React.FC<AIAgentLauncherProps> = ({ onOpen, isOpen
 
   const BUBBLE_TEXTS = [
     "Ask me anything about Kavisri in any language!",
-    "Explore projects, skills, 8.33 CGPA & internships.",
+    "Explore live projects, skills, 8.33 CGPA & internships.",
     "Drag me anywhere on your screen!",
   ];
 

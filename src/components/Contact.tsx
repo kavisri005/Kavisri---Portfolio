@@ -42,9 +42,9 @@ export const Contact: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [statusMessage, setStatusMessage] = useState('');
 
-  const emailVal = profile.email || 'a.kavisri005@gmail.com';
-  const phoneVal = profile.phone || '+91 93617 83617';
-  const locationVal = profile.location || 'Trichy, Tamil Nadu, India';
+  const emailVal = profile.email || 'a.kavisrii@gmail.com';
+  const phoneVal = profile.phone || '8667589833';
+  const locationVal = profile.location || 'Salem, India';
 
   const githubLink = socialLinks.find(s => s.platform.toLowerCase().includes('github'))?.url || profile.github_url || 'https://github.com/kavisri005';
   const linkedinLink = socialLinks.find(s => s.platform.toLowerCase().includes('linkedin'))?.url || profile.linkedin_url || 'https://linkedin.com/in/kavisri-a';

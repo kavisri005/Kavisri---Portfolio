@@ -14,28 +14,30 @@ import {
 export const initialProfile: Profile = {
   id: 'kavisri-profile',
   name: 'KAVISRI A',
-  headline: 'I build practical software solutions with code, data & AI.',
-  short_bio: 'Computer Science and Engineering student building practical solutions across software development, data analytics, and AI/ML.',
+  title: 'Software Developer',
+  positioning: 'Full-Stack Web Development | APIs | Database Systems',
+  headline: 'I build responsive web apps, database systems and AI-powered tools.',
+  short_bio: 'Computer Science and Engineering undergraduate with hands-on experience in full-stack web development using React.js, JavaScript, Python, Flask, and SQL. Experienced in responsive applications, REST APIs, database-driven systems, and AI-powered tools. Seeking a Software Developer role to contribute to real-world applications and grow as a developer.',
   detailed_bio: [
-    'I am a Computer Science and Engineering undergraduate with a CGPA of 8.33/10 and a strong interest in software development and problem-solving.',
-    'My experience spans web development, data analysis, databases, and introductory AI/ML. I enjoy turning ideas into practical applications and learning new technologies through hands-on projects.',
-    'Currently, I am exploring Generative AI, Prompt Engineering, and APIs while continuing to strengthen my software development skills.'
+    'I am a Computer Science and Engineering undergraduate at M.A.M. College of Engineering and Technology, with hands-on experience building full-stack web applications using React.js, JavaScript, Python, Flask, and SQL.',
+    'I have developed responsive websites, REST APIs, database-driven systems, and AI-powered tools through internships and practical projects. I enjoy solving problems, learning quickly, and working with teams to deliver useful software.',
+    'I am seeking a Software Developer role where I can contribute to real-world applications and continue growing as a developer.'
   ],
-  location: 'Trichy, India',
-  email: 'a.kavisri005@gmail.com',
+  location: 'Salem, India',
+  email: 'a.kavisrii@gmail.com',
   phone: '8667589833',
   linkedin_url: 'https://linkedin.com/in/kavisri-a-6a14a328a',
   linkedin_display: 'linkedin.com/in/kavisri-a-6a14a328a',
   github_url: 'https://github.com/kavisri005',
   github_display: 'github.com/kavisri005',
-  resume_url: '',
-  profile_image_url: '',
+  resume_url: '/KAVISRI_A_Resume_2026.pdf',
+  profile_image_url: '/profile-kavisri.png',
   updated_at: new Date().toISOString(),
   education_brief: {
     degree: 'B.E. Computer Science and Engineering',
     cgpa: '8.33 / 10',
     location: 'Trichy, India',
-    focus: 'Software Development',
+    focus: 'Full-Stack Web Development',
     exploring: 'Generative AI • Prompt Engineering • APIs'
   }
 };
@@ -43,142 +45,77 @@ export const initialProfile: Profile = {
 export const initialSkills: Skill[] = [
   // Software Development
   { id: 'skill-python', category: 'Software Development', name: 'Python', display_order: 1, is_published: true },
-  { id: 'skill-java', category: 'Software Development', name: 'Java', display_order: 2, is_published: true },
-  { id: 'skill-javascript', category: 'Software Development', name: 'JavaScript', display_order: 3, is_published: true },
-  { id: 'skill-html5', category: 'Software Development', name: 'HTML5', display_order: 4, is_published: true },
-  { id: 'skill-css', category: 'Software Development', name: 'CSS', display_order: 5, is_published: true },
+  { id: 'skill-javascript', category: 'Software Development', name: 'JavaScript', display_order: 2, is_published: true },
+  { id: 'skill-html5', category: 'Software Development', name: 'HTML', display_order: 3, is_published: true },
+  { id: 'skill-css', category: 'Software Development', name: 'CSS', display_order: 4, is_published: true },
+  { id: 'skill-react', category: 'Software Development', name: 'React.js', display_order: 5, is_published: true },
+  { id: 'skill-flask', category: 'Software Development', name: 'Flask', display_order: 6, is_published: true },
 
   // Database
-  { id: 'skill-mysql', category: 'Database', name: 'MySQL', display_order: 6, is_published: true },
-  { id: 'skill-sql-queries', category: 'Database', name: 'SQL Queries', display_order: 7, is_published: true },
-  { id: 'skill-schema-design', category: 'Database', name: 'Schema Design', display_order: 8, is_published: true },
-  { id: 'skill-mongodb', category: 'Database', name: 'MongoDB', display_order: 9, is_published: true },
+  { id: 'skill-mysql', category: 'Database', name: 'MySQL', display_order: 7, is_published: true },
+  { id: 'skill-postgresql', category: 'Database', name: 'PostgreSQL', display_order: 8, is_published: true },
+  { id: 'skill-supabase', category: 'Database', name: 'Supabase', display_order: 9, is_published: true },
 
   // Data & Analytics
-  { id: 'skill-pandas', category: 'Data & Analytics', name: 'Pandas', display_order: 10, is_published: true },
-  { id: 'skill-numpy', category: 'Data & Analytics', name: 'NumPy', display_order: 11, is_published: true },
-  { id: 'skill-matplotlib', category: 'Data & Analytics', name: 'Matplotlib', display_order: 12, is_published: true },
-  { id: 'skill-powerbi', category: 'Data & Analytics', name: 'Power BI', display_order: 13, is_published: true },
+  { id: 'skill-git', category: 'Tools & Platforms', name: 'Git', display_order: 10, is_published: true },
+  { id: 'skill-github', category: 'Tools & Platforms', name: 'GitHub', display_order: 11, is_published: true },
+  { id: 'skill-vscode', category: 'Tools & Platforms', name: 'VS Code', display_order: 12, is_published: true },
+  { id: 'skill-colab', category: 'Tools & Platforms', name: 'Google Colab', display_order: 13, is_published: true },
 
   // AI / Emerging Technologies
-  { id: 'skill-genai', category: 'AI / Emerging Technologies', name: 'Generative AI', is_exploring: true, display_order: 14, is_published: true },
-  { id: 'skill-prompt-eng', category: 'AI / Emerging Technologies', name: 'Prompt Engineering', is_exploring: true, display_order: 15, is_published: true },
-  { id: 'skill-apis', category: 'AI / Emerging Technologies', name: 'APIs', is_exploring: true, display_order: 16, is_published: true }
+  { id: 'skill-genai', category: 'AI / Emerging Technologies', name: 'Generative AI', display_order: 14, is_published: true },
+  { id: 'skill-prompt-eng', category: 'AI / Emerging Technologies', name: 'Prompt Engineering', display_order: 15, is_published: true },
+  { id: 'skill-apis', category: 'AI / Emerging Technologies', name: 'REST APIs', display_order: 16, is_published: true },
+  { id: 'skill-vercel', category: 'Tools & Platforms', name: 'Vercel', display_order: 17, is_published: true },
+  { id: 'skill-excel', category: 'Tools & Platforms', name: 'Microsoft Excel', display_order: 18, is_published: true },
+  { id: 'skill-soft', category: 'Professional Skills', name: 'Problem Solving', display_order: 19, is_published: true },
+  { id: 'skill-critical', category: 'Professional Skills', name: 'Critical Thinking', display_order: 20, is_published: true },
+  { id: 'skill-decision-making', category: 'Professional Skills', name: 'Decision Making', display_order: 21, is_published: true },
+  { id: 'skill-teamwork', category: 'Professional Skills', name: 'Teamwork', display_order: 22, is_published: true },
+  { id: 'skill-adaptability', category: 'Professional Skills', name: 'Adaptability', display_order: 23, is_published: true },
+  { id: 'skill-quick-learner', category: 'Professional Skills', name: 'Quick Learner', display_order: 24, is_published: true }
 ];
 
 export const initialProjects: Project[] = [
   {
-    id: 'campusfind',
-    title: 'CampusFind',
-    subtitle: 'Lost & Found Web Application',
-    category: 'Web Development',
+    id: 'pulsetask', title: 'PulseTask', subtitle: 'Task Management Web Application', category: 'Web Applications',
     technologies: ['HTML', 'CSS', 'JavaScript'],
-    description: 'A web application designed to manage lost and found items within a campus environment.',
-    detailed_description: 'CampusFind solves the challenge of misplaced student items across university campus facilities by offering a unified portal for reporting, cataloging, and claiming found belongings.',
-    problem: 'Campus communities frequently lose items across lecture halls, libraries, and cafeteria spaces without a centralized, accessible listing portal.',
-    solution: 'Designed an intuitive, responsive lost-and-found interface enabling users to report missing items, browse recovered belongings, and quickly filter by category and location.',
-    features: [
-      'Post lost and found item listings',
-      'Search and filter listings by category/location',
-      'Manage active item status',
-      'Fully responsive mobile and desktop interface'
-    ],
-    key_contributions: [
-      'Developed functionality for posting lost and found items',
-      'Implemented searching and managing item listings',
-      'Designed a responsive interface',
-      'Focused on user-friendly interaction'
-    ],
-    github_url: 'https://github.com/kavisri005/campusfind',
-    mockup_type: 'lost-and-found',
-    featured: true,
-    is_published: true,
-    display_order: 1
+    description: 'A responsive web application for creating, organizing, and managing daily tasks efficiently.',
+    detailed_description: 'PulseTask provides a user-friendly interface for task tracking, with interactive components that make it easier to organize daily work and maintain productivity.',
+    solution: 'Built a responsive task management experience with clear organization and interactive task controls.',
+    features: ['Create and organize daily tasks', 'Track tasks through an intuitive interface', 'Responsive layouts for mobile and desktop'],
+    key_contributions: ['Developed the task management application', 'Designed a responsive interface', 'Implemented interactive task organization components'],
+    demo_url: 'https://pulsetask-puce.vercel.app', mockup_type: 'generic', featured: true, is_published: true, display_order: 1
   },
   {
-    id: 'ai-resume-analyzer',
-    title: 'AI Resume Analyzer',
-    subtitle: 'Resume Parsing & Skill Extraction Tool',
-    category: 'AI / Python',
-    technologies: ['Python'],
-    description: 'A tool designed to process resumes, extract relevant skills and qualification sections, and summarize key candidate profile attributes.',
-    detailed_description: 'An automated resume parsing and text processing project built in Python to evaluate resume text, extract technical skill competencies, and organize structured applicant summaries.',
-    problem: 'Manual screening of resumes requires substantial time to identify specific technical keywords and experience highlights across varied document layouts.',
-    solution: 'Engineered a clean Python-based resume analyzer that ingests resume content, parses structural sections, and isolates candidate skills for fast assessment.',
-    features: [
-      'Automated resume text parsing',
-      'Extraction of technical competencies and skills',
-      'Section-by-section profile breakdown',
-      'Structured summary output for fast evaluation'
-    ],
-    key_contributions: [
-      'Built parsing logic for text extraction from resume documents',
-      'Implemented keyword matching algorithms for technical skill sets',
-      'Designed structured summary output formats',
-      'Focused on clean, maintainable Python code structure'
-    ],
-    github_url: 'https://github.com/kavisri005/ai-resume-analyzer',
-    mockup_type: 'resume-analyzer',
-    featured: true,
-    is_published: true,
-    display_order: 2
+    id: 'parambariyam-cashews', title: 'Parambariyam Cashews', subtitle: 'Premium E-commerce Platform', category: 'Web Applications',
+    technologies: ['React.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Supabase', 'SQLite', 'REST APIs', 'Vercel'],
+    description: 'A responsive premium e-commerce platform with dynamic product catalogues and WhatsApp-based customer enquiries.',
+    detailed_description: 'Integrated Supabase and REST APIs for product management, enquiry processing, and admin dashboard operations. Added privacy-focused analytics, an XML sitemap, and SEO structured data.',
+    solution: 'Built a responsive storefront and connected product and enquiry workflows to Supabase and REST APIs.',
+    features: ['Dynamic product catalogues', 'WhatsApp-based customer enquiries', 'Product management and enquiry processing', 'Admin dashboard', 'Privacy-focused analytics and SEO structured data'],
+    key_contributions: ['Developed the e-commerce platform', 'Integrated Supabase and REST APIs', 'Implemented admin operations and enquiry processing', 'Added XML sitemap and SEO structured data'],
+    demo_url: 'https://www.parambariyamcashews.com', mockup_type: 'generic', featured: true, is_published: true, display_order: 2
   },
   {
-    id: 'renewable-energy',
-    title: 'Renewable Energy Analytics Dashboard',
-    subtitle: 'Energy Generation & Consumption Insights',
-    category: 'Data Analytics',
-    technologies: ['Power BI'],
-    description: 'An interactive dashboard for analyzing renewable energy generation and consumption.',
-    detailed_description: 'A comprehensive Power BI business intelligence dashboard modeling renewable power output (solar, wind, hydro) alongside consumer demand metrics.',
-    problem: 'Clean energy transition requires clear visibility into solar, wind, and hydro generation patterns contrasted against peak grid demand periods.',
-    solution: 'Built comprehensive Power BI KPI visual cards, energy trend line graphs, and comparative generation vs. consumption distribution metrics supporting sustainable planning.',
-    features: [
-      'KPI visualizations for generation capacity and load',
-      'Time-series energy generation trend analysis',
-      'Generation source breakdown (Solar, Wind, Hydro)',
-      'Data-driven sustainability insights'
-    ],
-    key_contributions: [
-      'Created KPI visualizations',
-      'Analyzed energy trends',
-      'Identified patterns in renewable energy data',
-      'Generated insights supporting sustainable energy planning'
-    ],
-    github_url: 'https://github.com/kavisri005/Renewable-Energy-Dashboard',
-    mockup_type: 'energy-dashboard',
-    featured: true,
-    is_published: true,
-    display_order: 3
+    id: 'md-engineers', title: 'MD Engineers', subtitle: 'Business Website & Enquiry Management System', category: 'Web Applications',
+    technologies: ['React.js', 'Vite', 'Flask', 'Python', 'PostgreSQL', 'Supabase', 'REST APIs', 'Gmail SMTP', 'Vercel'],
+    description: 'A responsive business website with enquiry management, a protected admin dashboard, and automated email notifications.',
+    detailed_description: 'Implemented Supabase webhooks for asynchronous email processing and optimized PostgreSQL with atomic CTE queries and connection reuse. Reduced measured enquiry API response time from about 4.6-5.2 seconds to about 200 ms in warm local testing.',
+    solution: 'Connected the public enquiry flow to a protected admin dashboard, email notifications, and optimized database and asynchronous processing.',
+    features: ['Business website and enquiry management', 'Protected admin dashboard', 'Automated email notifications', 'Supabase webhook email processing', 'Optimized PostgreSQL operations'],
+    key_contributions: ['Built the business website and REST APIs', 'Implemented admin dashboard and email workflows', 'Optimized database and asynchronous processing', 'Measured enquiry API improvements in warm local testing'],
+    demo_url: 'https://md-engineers.vercel.app', mockup_type: 'generic', featured: true, is_published: true, display_order: 3
   },
   {
-    id: 'ecommerce-returns',
-    title: 'E-Commerce Return Rate Investigation',
-    subtitle: 'Exploratory Data Analysis & Factor Investigation',
-    category: 'Data Science',
-    technologies: ['Python', 'Pandas', 'NumPy', 'Matplotlib'],
-    description: 'A data analysis project investigating factors influencing e-commerce product return rates.',
-    detailed_description: 'Statistical investigation exploring underlying patterns in customer product returns across category, sizing, fulfillment speed, and customer feedback.',
-    problem: 'High product return rates reduce e-commerce profitability and create operational logistics overhead across supply chain nodes.',
-    solution: 'Applied statistical analysis and data cleaning on transaction records with Pandas and NumPy, visualizing key return drivers with Matplotlib charts.',
-    features: [
-      'Data cleaning and missing value handling',
-      'Exploratory data analysis (EDA) across product categories',
-      'Statistical correlation and return factor identification',
-      'Matplotlib visual graphs for business decision-makers'
-    ],
-    key_contributions: [
-      'Performed data cleaning',
-      'Conducted exploratory data analysis',
-      'Applied statistical analysis',
-      'Identified factors associated with product returns',
-      'Generated data-driven recommendations to reduce return rates'
-    ],
-    github_url: 'https://github.com/kavisri005/Ecommerce-Return-Rate-Investigation',
-    mockup_type: 'ecommerce-returns',
-    featured: true,
-    is_published: true,
-    display_order: 4
+    id: 'sri-parasakthi-digitals', title: 'Sri Parasakthi Digitals', subtitle: 'Premium Photography Studio Website', category: 'Web Applications',
+    technologies: ['React', 'TypeScript', 'CSS', 'Framer Motion', 'GSAP', 'React Bits', 'Vercel'],
+    description: 'A cinematic, responsive photography studio website with a premium editorial interface.',
+    detailed_description: 'Designed interactive 3D and parallax photography galleries with scroll-based animations, optimizing responsive layouts, reusable React components, animation performance, and overall user experience.',
+    solution: 'Created a visual editorial experience with interactive photography galleries and scroll-based motion.',
+    features: ['Interactive 3D and parallax galleries', 'Scroll-based animations', 'Responsive layouts', 'Reusable React components'],
+    key_contributions: ['Designed and developed the studio website', 'Implemented interactive galleries and animations', 'Optimized responsive layouts and animation performance'],
+    demo_url: 'https://sri-parasakthi-digitals.vercel.app', mockup_type: 'generic', featured: true, is_published: true, display_order: 4
   }
 ];
 
@@ -200,35 +137,18 @@ export const initialExperiences: Experience[] = [
     is_published: true
   },
   {
-    id: 'exp-artifai-2025',
+    id: 'exp-thamizhan-2025',
     year: '2025',
-    role: 'Data Science Intern',
-    company: 'ArtifAI Tech',
-    location: 'Trichy',
-    type: 'internship',
-    responsibilities: [
-      'Performed data cleaning and analysis using Python',
-      'Learned data visualization',
-      'Learned basic Machine Learning concepts',
-      'Completed hands-on exercises and mini-projects'
-    ],
-    display_order: 2,
-    is_published: true
-  },
-  {
-    id: 'exp-thamizhan-2026',
-    year: '2026',
     role: 'Database Intern',
     company: 'Thamizhan Skills',
-    location: 'Madipakkam, Chennai',
+    location: 'Madipakkam',
     type: 'internship',
     responsibilities: [
-      'Worked with MySQL and MongoDB',
-      'Performed CRUD operations',
-      'Worked with joins and SQL queries',
-      'Completed practical database design and management assignments'
+      'Worked with MySQL and MongoDB for database management',
+      'Performed CRUD operations, joins, and SQL queries',
+      'Completed practical assignments in database design and management'
     ],
-    display_order: 3,
+    display_order: 2,
     is_published: true
   },
   {
@@ -236,13 +156,27 @@ export const initialExperiences: Experience[] = [
     year: '2026',
     role: 'AIML Intern',
     company: 'Nirmaan WAISE',
-    location: 'Thambaram, Chennai',
+    location: 'Thambaram',
     type: 'internship',
     responsibilities: [
-      'Learned AI and Machine Learning fundamentals',
+      'Learned AI and Machine Learning fundamentals through practical training',
       'Performed data preprocessing and analysis using Python',
-      'Worked with basic machine learning models',
-      'Completed mini-projects'
+      'Worked on basic machine learning models and mini-projects'
+    ],
+    display_order: 3,
+    is_published: true
+  },
+  {
+    id: 'exp-prcbo-2026',
+    year: '2026',
+    role: 'Software Developer Intern',
+    company: 'Prcbo Tech',
+    location: 'Madurai',
+    type: 'internship',
+    responsibilities: [
+      'Developed responsive web applications using React.js, JavaScript, Python, and Flask',
+      'Built the MD Engineers business website with REST APIs, PostgreSQL/Supabase, an admin dashboard, and automated email workflows',
+      'Improved enquiry submission performance through database and asynchronous processing optimization'
     ],
     display_order: 4,
     is_published: true
@@ -252,17 +186,16 @@ export const initialExperiences: Experience[] = [
 export const initialEducation: Education[] = [
   {
     id: 'edu-be-cse',
-    degree: 'B.E. — Computer Science and Engineering',
+    degree: 'B.E. - Computer Science and Engineering',
     institution: 'M.A.M. College of Engineering and Technology',
-    location: 'Tiruchirappalli',
-    period: '2023 – 2027',
+    location: 'Trichy',
+    period: '2023 - Present',
     start_year: '2023',
-    end_year: '2027',
     status: 'In Progress',
     cgpa: '8.33 / 10',
     score: '8.33 / 10',
     score_label: 'CGPA',
-    description: 'Specialization in core computer science, software design, algorithms, database systems, and intelligent applications.',
+    description: 'Computer Science and Engineering undergraduate degree in progress.',
     display_order: 1,
     is_published: true
   },
@@ -277,21 +210,19 @@ export const initialEducation: Education[] = [
     status: 'Completed',
     description: 'Higher secondary school curriculum with focus on science and mathematics.',
     display_order: 2,
-    is_published: true
+    is_published: false
   }
 ];
 
 export const initialCertifications: Certification[] = [
-  { id: 'cert-python', title: 'Python Programming', name: 'Python Programming', display_order: 1, is_published: true },
-  { id: 'cert-java', title: 'Java Programming', name: 'Java Programming', display_order: 2, is_published: true },
-  { id: 'cert-html', title: 'HTML', name: 'HTML', display_order: 3, is_published: true },
-  { id: 'cert-css', title: 'CSS', name: 'CSS', display_order: 4, is_published: true },
-  { id: 'cert-javascript', title: 'JavaScript', name: 'JavaScript', display_order: 5, is_published: true },
-  { id: 'cert-sql', title: 'SQL & Database Management', name: 'SQL & Database Management', display_order: 6, is_published: true },
-  { id: 'cert-powerbi', title: 'Power BI Fundamentals', name: 'Power BI Fundamentals', display_order: 7, is_published: true },
-  { id: 'cert-ai-lit', title: 'AI Literacy Course', name: 'AI Literacy Course', display_order: 8, is_published: true },
-  { id: 'cert-ai-fund', title: 'AI Fundamentals', name: 'AI Fundamentals', display_order: 9, is_published: true },
-  { id: 'cert-prof-skills', title: 'Lifelong Professional Skills', name: 'Lifelong Professional Skills', display_order: 10, is_published: true }
+  { id: 'cert-python', title: 'Python Programming', name: 'Python Programming', issuer: 'Great Learning', display_order: 1, is_published: true },
+  { id: 'cert-java', title: 'Java Programming', name: 'Java Programming', issuer: 'Great Learning', display_order: 2, is_published: true },
+  { id: 'cert-html-css', title: 'HTML & CSS', name: 'HTML & CSS', display_order: 3, is_published: true },
+  { id: 'cert-javascript', title: 'JavaScript', name: 'JavaScript', display_order: 4, is_published: true },
+  { id: 'cert-sql', title: 'SQL & Database Management', name: 'SQL & Database Management', issuer: 'Thamizhan Skills', display_order: 5, is_published: true },
+  { id: 'cert-prompt', title: 'Prompt Engineering', name: 'Prompt Engineering', issuer: 'GUVI', display_order: 6, is_published: true },
+  { id: 'cert-ai-fund', title: 'AI Fundamentals: Foundations for Understanding AI', name: 'AI Fundamentals: Foundations for Understanding AI', issuer: 'IBM', display_order: 7, is_published: true },
+  { id: 'cert-prof-skills', title: 'Lifelong Professional Skills', name: 'Lifelong Professional Skills', issuer: 'IBM', display_order: 8, is_published: true }
 ];
 
 export const initialAchievements: Achievement[] = [
@@ -366,7 +297,7 @@ export const initialSocialLinks: SocialLink[] = [
     id: 'social-email',
     platform: 'email',
     label: 'Email',
-    url: 'mailto:a.kavisri005@gmail.com',
+    url: 'mailto:a.kavisrii@gmail.com',
     display_order: 3,
     is_published: true
   },
@@ -381,18 +312,20 @@ export const initialSocialLinks: SocialLink[] = [
 ];
 
 export const initialResumeData: ResumeData = {
-  filename: 'Kavisri_A_Software_Developer_Resume.pdf',
-  url: '',
-  upload_date: '2026-08-20',
+  filename: 'KAVISRI_A_Resume_2026.pdf',
+  file_name: 'KAVISRI_A_Resume_2026.pdf',
+  url: '/KAVISRI_A_Resume_2026.pdf',
+  file_url: '/KAVISRI_A_Resume_2026.pdf',
+  upload_date: '2026-11-24',
   is_published: true,
-  size: '142 KB'
+  size: '133 KB'
 };
 
 // Aliases for backwards compatibility with any component imports
 export const personalInfo = {
   name: initialProfile.name,
-  title: 'Aspiring Software Developer',
-  positioning: 'Software Development • Data • AI/ML',
+  title: 'Software Developer',
+  positioning: 'Full-Stack Web Development | APIs | Database Systems',
   headline: initialProfile.headline,
   shortBio: initialProfile.short_bio,
   detailedBio: initialProfile.detailed_bio,
@@ -410,39 +343,62 @@ export const personalInfo = {
 
 export const skillCategories = [
   {
-    title: 'Software Development',
+    title: 'Programming Languages',
     skills: [
       { name: 'Python' },
-      { name: 'Java' },
-      { name: 'JavaScript' },
-      { name: 'HTML5' },
+      { name: 'JavaScript' }
+    ]
+  },
+  {
+    title: 'Web Development',
+    skills: [
+      { name: 'HTML' },
       { name: 'CSS' }
+    ]
+  },
+  {
+    title: 'Frameworks',
+    skills: [
+      { name: 'React.js' },
+      { name: 'Flask' }
     ]
   },
   {
     title: 'Database',
     skills: [
       { name: 'MySQL' },
-      { name: 'SQL Queries' },
-      { name: 'Schema Design' },
-      { name: 'MongoDB' }
+      { name: 'PostgreSQL' },
+      { name: 'Supabase' }
     ]
   },
   {
-    title: 'Data & Analytics',
+    title: 'AI & APIs',
     skills: [
-      { name: 'Pandas' },
-      { name: 'NumPy' },
-      { name: 'Matplotlib' },
-      { name: 'Power BI' }
+      { name: 'Generative AI' },
+      { name: 'Prompt Engineering' },
+      { name: 'REST APIs' }
     ]
   },
   {
-    title: 'AI / Emerging Technologies',
+    title: 'Tools & Platforms',
     skills: [
-      { name: 'Generative AI', isExploring: true },
-      { name: 'Prompt Engineering', isExploring: true },
-      { name: 'APIs', isExploring: true }
+      { name: 'Git' },
+      { name: 'GitHub' },
+      { name: 'VS Code' },
+      { name: 'Google Colab' },
+      { name: 'Vercel' },
+      { name: 'Microsoft Excel' }
+    ]
+  },
+  {
+    title: 'Professional Skills',
+    skills: [
+      { name: 'Problem Solving' },
+      { name: 'Critical Thinking' },
+      { name: 'Decision Making' },
+      { name: 'Teamwork' },
+      { name: 'Adaptability' },
+      { name: 'Quick Learner' }
     ]
   }
 ];
